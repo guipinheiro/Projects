@@ -10,3 +10,5 @@ The second one is a historical of games and their grades on the IGN website.
 
 I will study both these datasets separatedly and try to cross some data
 between them.
+
+After finishing it, I will probably publish it on Kaggle.
