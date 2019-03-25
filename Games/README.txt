@@ -1,5 +1,3 @@
-Version: 1.0.0
-
 Motivation: I've created this notebook to study a little more about the games
 industry
 
