@@ -6,4 +6,4 @@ In order to do it, I've download 2 datasets from Kaggle, one containing data fro
 
 The second one is a historical of games and their grades on the IGN website.
 
-I will study both these datasets separatedly and try to cross some data between them.
+I will study both these datasets separatedly and try to cross some data between them. :)
