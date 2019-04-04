@@ -3,7 +3,7 @@ jupyter:
   jupytext:
     formats: ipynb,Rmd
     text_representation:
-      extension: .Rmd:rmarkdown
+      extension: .Rmd
       format_name: rmarkdown
       format_version: '1.0'
       jupytext_version: 1.0.5
@@ -12,10 +12,6 @@ jupyter:
     language: python
     name: python3
 ---
-
-```{python}
-# %autosave 0
-```
 
 ```{python}
 from IPython.display import HTML
@@ -106,6 +102,26 @@ ign_pc = ign[ign['platform'] == 'PC'].copy()
 
 ```{python}
 ign_pc.head()
+```
+
+```{python}
+steam.isna().sum()
+```
+
+```{python}
+ign.isna().sum()
+```
+
+```{python}
+
+```
+
+```{python}
+
+```
+
+```{python}
+
 ```
 
 ```{python}
