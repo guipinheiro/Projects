@@ -7,3 +7,9 @@ In order to do it, I've download 2 datasets from Kaggle, one containing data fro
 The second one is a historical of games and their grades on the IGN website.
 
 I will study both these datasets separatedly and try to cross some data between them. :)
+
+******************
+
+To compare changes, created a .Rmd file from the .ipynb. Check out this tutorial for it:
+
+https://towardsdatascience.com/version-control-with-jupyter-notebooks-f096f4d7035a
