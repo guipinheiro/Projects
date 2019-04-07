@@ -113,7 +113,8 @@ ign.isna().sum()
 ```
 
 ```{python}
-
+filtro = ign['genre'].isna()
+ign[filtro]
 ```
 
 ```{python}
