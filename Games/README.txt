@@ -6,6 +6,9 @@ In order to do it, I've download 2 datasets from Kaggle, one containing data fro
 
 The second one is a historical of games and their grades on the IGN website.
 
+steam: https://www.kaggle.com/tamber/steam-video-games
+ign: https://www.kaggle.com/egrinstein/20-years-of-games
+
 I will study both these datasets separatedly and try to cross some data between them. :)
 
 ******************
