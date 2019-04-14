@@ -1,0 +1,126 @@
+---
+jupyter:
+  jupytext:
+    formats: ipynb,Rmd
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.0'
+      jupytext_version: 1.0.5
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+```{python}
+# from IPython.display import HTML
+
+# HTML('''<script>
+# code_show=true; 
+# function code_toggle() {
+#  if (code_show){
+#  $('div.input').hide();
+#  } else {
+#  $('div.input').show();
+#  }
+#  code_show = !code_show
+# } 
+# $( document ).ready(code_toggle);
+# </script>
+# The raw code for this IPython notebook is by default hidden for easier reading.
+# To toggle on/off the raw code, click <a href="javascript:code_toggle()">here</a>.''')
+```
+
+```{python}
+import pandas as pd
+import numpy as np
+import seaborn as sns
+from matplotlib import pyplot as plt
+# %matplotlib inline
+```
+
+```{python}
+#We will exclude the last row of the dataset once it represents no information for the analysis
+steam = pd.read_csv(r'./data/steam-200k.csv', usecols=[0,1,2,3])
+```
+
+# Dataset description and prep
+
+This dataset is a list of user behaviors, with columns: user-id, game-title, behavior-name, value. The behaviors included are 'purchase' and 'play'. The value indicates the degree to which the behavior was performed - in the case of 'purchase' the value is always 1, and in the case of 'play' the value represents the number of hours the user has played the game.
+
+First, let's check a few lines of the dataset
+
+```{python}
+steam.head()
+```
+
+We see that our csv file has **no header**, so it's considering the first observation as it. Let's fix that by importing it again and adding our columns names!
+
+```{python}
+steam = pd.read_csv(r'data/steam-200k.csv',
+                 usecols=[0,1,2,3],
+                 names = ['user_id', 'game', 'behavior', 'status'])
+```
+
+```{python}
+steam.head()
+```
+
+Much better!
+
+Now, we see we have duplicate rows of the same game for the same user_id. This happens for the way the dataset is built. I would recommend considering removing the rows for *behavior* = 'purchase', once it just brings the same information of the column *play* (that is, the user has aquired the game in order to play it. Or could he have bought it and not played and the dataset would just show purchase and not the play line?
+
+Let's check?
+
+```{python}
+n_games_purchased = steam[steam['behavior'] == 'purchase']['behavior'].value_counts().sum()
+n_games_played = steam[steam['behavior'] == 'play']['behavior'].value_counts().sum()
+ratio_played_purchased = n_games_played/n_games_purchased
+```
+
+```{python}
+print(f'Number of games purchased: {n_games_purchased}')
+print(f'Number of games played: {n_games_played}')
+print(f'Ratio Played/Purchased: {round(ratio_played_purchased*100,2)}%')
+```
+
+Well, from here we can see that the ratio of games purchased and played is *54.43%*, this means almost half the games bought are not played.
+
+```{python}
+ign = pd.read_csv(r'./data/ign.csv')
+```
+
+```{python}
+ign.head()
+```
+
+```{python}
+#Creating PC only dataframe for the ign dataset
+ign_pc = ign[ign['platform'] == 'PC'].copy()
+```
+
+```{python}
+ign_pc.head()
+```
+
+```{python}
+steam.isna().sum()
+```
+
+```{python}
+ign.isna().sum()
+```
+
+```{python}
+filtro = ign['genre'].isna()
+ign[filtro]
+```
+
+```{python}
+
+```
+
+```{python}
+
+```
