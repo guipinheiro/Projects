@@ -118,10 +118,6 @@ ign[filtro]
 ```
 
 ```{python}
-#mudança no master
-```
-
-```{python}
 
 ```
 
